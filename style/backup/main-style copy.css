@@ -1,0 +1,344 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300;400;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(190deg, #7990a3 10%, #12243a 90%);
+  overflow-x: hidden;
+  /* font-family: "Maven Pro", sans-serif; */
+  font-family: 'Josefin Slab', serif;
+}
+
+/* body {
+  background-size: 500% 500%;
+  background-image: linear-gradient(
+    45deg,
+    rgba(153, 153, 153, 1) 0%,
+    rgba(121, 144, 163, 1) 25%,
+    rgba(33, 68, 112, 1) 50%,
+    rgba(18, 36, 58, 1) 100%
+  );
+  animation: AnimateBG 5s ease infinite;
+} */
+
+@keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* SCROLLBAR */
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+    }
+    
+    body::-webkit-scrollbar-track {
+    background: black;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+    }
+    
+
+/* NAVBAR */
+
+.nav-all {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /*Define o posicionamento da NavBar na página*/
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /*Define o posicionamento dos itens dentro da NavBar*/
+  position: fixed; /*Faz com que a NavBar se movimento junto do scroll do mouse*/
+  z-index: 9999;
+}
+
+.nav-config {
+  width: 180vh; /*Define a largura da NavBar*/
+  height: 10vh; /*Define a altura da NavBar*/
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: linear-gradient(190deg, #7990a3 10%, #12243a 90%);
+  display: flex;
+  align-items: center; /*Alinha verticalmente os itens no centro da navbar*/
+}
+
+.nav-item {
+  display: flex;
+  align-items: center; /*Alinha os itens dentro de uma mesma tag*/
+  margin-left: 1%;
+  font-size: 60px;
+  font-weight: 400;
+  color: white;
+}
+
+.nav-img {
+  /*Definição da logo da NavBar*/
+  width: 120px;
+}
+
+/* FIM NAVBAR */
+
+
+/* SLIDER */
+
+.slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /*Faz com que os slides que não estão aparecendo no momento sumam*/
+}
+
+.slides {
+  width: 400%; /*Indica que existem 4 slides no total*/
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slides input {
+  /*Input dos butões*/
+  display: none;
+}
+
+.slide {
+  /*Configuração dos slides como um todo*/
+  width: 25%; /*Diz que apenas 1 dos 4 slides irá aparecer na tela*/
+  transition: 0.4s;
+}
+
+.slide img {
+  /*Configuração das imagens dos slides*/
+  object-fit: cover; /*Evita a distorção da imagem*/
+  width: 100%;
+  height: 90vh;
+}
+
+.slide-shadow::after {
+  content: ""; /*Indica que o conteúdo da sombra é nulo*/
+  position: absolute; /*Faz com que a sombra se sobreponha à imagem*/
+  width: 100%;
+  height: 90vh;
+  z-index: 8; /*Faz com que a sombra se sobreponha à imagem também*/
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0) 40%,
+    #000 100%
+  );
+}
+
+/* Definição do posicionamento: Define a posição de cada iamgem, movendo os slides dependendo do botão clicado */
+#radio-1:checked ~ .first {
+  margin-left: 0;
+  transition: 0.4s;
+}
+
+#radio-2:checked ~ .first {
+  margin-left: -50%;
+  transition: 0.4s;
+}
+
+#radio-3:checked ~ .first {
+  margin-left: -100%;
+  transition: 0.4s;
+}
+
+#radio-4:checked ~ .first {
+  margin-left: -150%;
+  transition: 0.4s;
+}
+/* Fim da definição do posicionamento */
+
+/* Estilisação dos Radio Buttons */
+.navegation-config {
+  /*Configuração dos butões de navegação*/
+  z-index: 9998; /*Sobrepõe os butões em relação aos slides*/
+  display: flex;
+  justify-content: center;
+}
+
+.manual-navegation {
+  position: absolute; /*Faz com que os butões fiquem acima dos slides*/
+  bottom: 15%; /*Define a posição dos butões na página*/
+  display: flex;
+  justify-content: center; /*Centraliza os butões em suas devidas grades*/
+  padding-inline: 2%; /*Ajuda na separação dos butões*/
+  gap: 20%; /*Ajuda na separação dos butões*/
+  z-index: 9998;
+}
+
+.manual-btn {
+  height: 30px; /*Define a altura dos botões*/
+  border: 2px solid #12243a;
+  padding-inline: 50px; /*Define o comprimento dos butões*/
+  cursor: pointer; /*Torna o botão clicável*/
+  transition: 0.4s;
+}
+
+.manual-btn:hover {
+  background-color: #7990a3;
+}
+/* Fim da estilisação dos Radio Buttons */
+
+/* FIM SLIDER */
+
+
+/* RECOMENDADOS */
+
+.recomendation-all {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /*Define o posicionamento das Recomendações na página*/
+  margin-block: 2.5%; /*Define as margens da parte de cima e de baixo da caixa de redomendações*/
+}
+
+.recomendation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /*Define o posicionamento dos itens dentro da caixa de recomendações*/
+}
+
+.recomendation-config {
+  width: 180vh; /*Define a largura da caixa de recomendações*/
+  height: 70vh; /*Define a altura da caixa de recomendações*/
+  border-radius: 20px;
+  background-color: #7990a3;
+  display: flex;
+  align-items: center; /*Alinha verticalmente os itens no centro da caixa de recomedações*/
+  justify-content: center; /*Alinha horizontalmente os itens no centro da caixa de recomdeações*/
+  gap: 1%;
+}
+
+.recomendation-item {
+  border-radius: 20px;
+  width: 33vh;
+  height: 60vh;
+  background-color: black;
+  overflow: hidden; /*Não deixa a imagem passar do tamanho da caixa no hover*/
+}
+
+.recomendation-item img {
+  border-radius: 20px;
+  object-fit: cover; /*Deixa a imagem no tamanho da caixa sem distorção*/
+  width: 100%;
+  height: 60vh;
+  transition: 0.4s;
+  opacity: 1;
+  filter: blur(0);
+}
+
+.recomendation-item img:hover {
+  transform: scale(1.1);
+  filter: blur(1px);
+  opacity: 0.75;
+}
+
+/* FIM RECOMENDADOS */
+
+
+/* DROPDOWN */
+
+.dropdown { /*Definição geral do dropdown*/
+  display: flex; /*Faz com que os objetos fiquem um ao lado do outro*/
+}
+
+.dropdown .dropbtn { /*Definição geral do botão (item recomendado)*/
+  margin: none; /*Zera a margem*/
+  border: none; /*Zera a borda*/
+  background-color: black; /*Define o background dos itens recomendados*/
+}
+
+.dropdown-content { /*Estilização do balão do dropdown*/
+  width: 200px;
+  height: 400px;
+  display: none; /*Faz com que o dropdown desaparece enquanto o botão não é clicado*/
+  position: absolute; /*Faz com que o dropdown fique acima dos outros itens*/
+  margin: 1%; /*Cria o espaçamento entre  drpodown e o item*/
+  font-size: 20px;
+  background-color: #12243a;
+  border-radius: 20px;
+  z-index: 1; /*Faz com que o balão sobreponha a seta*/
+  text-decoration: none; /*Tira o estilo do texto da página*/
+  color: white;
+  padding: 20px; /*Define o espaçamento entre o texto e as bordas do balão*/
+}
+
+.drop-arrow {
+  background-color: #12243a;
+  rotate: 45deg; /*Rotaciona o quadrado de maneira a parecer uma seta*/
+  width: 80px;
+  height: 80px;
+  display: none; /*Faz com que a seta desapareca enquanto o botão não é clicado*/
+  position: absolute; /*Faz com que a seta fique acima dos outros itens*/
+  margin: 1%; /*Define o espaçamento entre a seta e o item recomendado*/
+}
+
+.dropdown:hover .dropdown-content{
+  display: block; /*Faz o dropdown aparecer*/
+}
+
+.dropdown:hover .drop-arrow{
+  display: block; /*Faz a seta aparecer*/
+}
+
+.align-drop { /*Alinhamento do dropdown*/
+  display: flex;
+  flex-direction: row;
+  justify-content: right; /*Alinha o dropdown a esquerda?*/
+  align-items: center; /*Alinha o dropdown no centro verticalmente*/
+}
+
+/* FIM DROPDOWN */
+
+
+/* HOVER DOS RECOMENDADOS */
+
+.recomendation-btn {
+  background-color: black; /*Deixa o fundo do item recomendado preto*/
+  margin: 0;
+  border: 0;
+}
+
+.recomendation-content { /*Definição do conteúdo*/
+  width: 33vh;
+  height: 60vh;
+  position: absolute; /*Faz com que o conteúdo fique acima do item recomendado*/
+  z-index: 1; /*Faz com que o conteúdo fique acima do item recomendado também*/
+  display: none; /*Deixa o conteúdo invisível enquanto o botão não é clicado*/
+  color: white;
+  padding: 20px;
+}
+
+.recomendation-item:hover .recomendation-content {
+  display: block; /*Faz com que o conteúdo apareça quando u botão é clicado*/
+}
+
+.recomendation-item:hover img { /*Faz o efeito hover da imagem mesmo quando o conteúdo fica por cima*/
+  transform: scale(1.1);
+  filter: blur(1px);
+  opacity: 0.5;
+}
+
+/* FIM DO HOVER DOS RECOMENDADOS */

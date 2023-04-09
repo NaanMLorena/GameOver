@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style/games-style.css">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <nav class="nav-all">
+
+            <div class="nav-item">
+                <a href="/index.html">
+                    <img src="/img/logo/ico/voltar.png" alt="">
+                </a>
+            </div>
+
+            <div class="nav-item">
+                <a href="/index.html">Voltar</a>
+            </div>
+
+        </nav>
+
+        <main>
+
+            <div class="content">
+
+                <div class="content-img">
+
+                    <div class="slider">
+
+                        <div class="slides">
+
+                            <!-- RADIO BUTTONS -->
+                            <input type="radio" name="radio-btn" id="radio-1" checked>
+                            <input type="radio" name="radio-btn" id="radio-2">
+                            <input type="radio" name="radio-btn" id="radio-3">
+                            <input type="radio" name="radio-btn" id="radio-4">
+                            <!-- FIM RADIO BUTTONS -->
+
+                            <!-- SLIDES IMG -->
+                            <div class="slide first">
+                                <div class="control">
+                                    <div class="control-play">
+                                        <div id="play-btn" class="play-icon" onclick="togglePlay()"></div>
+                                    </div>
+                                    <div class="control-speak">
+                                        <div id="mute-btn" class="speaker-icon" onclick="toggleMute()"></div>
+                                    </div>
+                                </div>
+                                <div class="slide-shadow"></div>
+                                <div class="slide-content">
+                                    <video id="myVideo" width="320" height="240" autoplay>
+                                        <source src="/video/gta/gta-01.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="slide-shadow"></div>
+                                <div class="slide-content">
+                                    <img
+                                        src="/img/games/gta/gta-01.jpg"
+                                        alt="">
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="slide-shadow"></div>
+                                <div class="slide-content">
+                                    <img
+                                        src="/img/games/gta/gta-02.jpg"
+                                        alt="">
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="slide-shadow"></div>
+                                <div class="slide-content">
+                                    <img
+                                        src="/img/games/gta/gta-03.jpeg"
+                                        alt="">
+                                </div>
+                            </div>
+                            <!-- FIM SLIDES IMG -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- DECORAÇÃO DOS BUTÕES -->
+                <div class="navegation-config">
+                    <div class="manual-navegation">
+                        <label for="radio-1" class="manual-btn">
+                            <img src="/img/games/gta/gta-banner.jpg" alt="">
+                        </label>
+                        <label for="radio-2" class="manual-btn">
+                            <img src="/img/games/gta/gta-01.jpg"
+                                alt="">
+                        </label>
+                        <label for="radio-3" class="manual-btn">
+                            <img src="/img/games/gta/gta-02.jpg"
+                                alt="">
+                        </label>
+                        <label for="radio-4" class="manual-btn">
+                            <img src="/img/games/gta/gta-03.jpeg"
+                                alt="">
+                        </label>
+                    </div>
+                </div>
+                <!-- FIM DA DECORAÇÃO DOS BUTÕES -->
+
+                <div class="content-txt">
+
+                    <div class="head">
+                        <div class="title">
+                            <h1>Grand Theft Auto V</h1>
+                        </div>
+
+                        <div class="shop">
+                            <div class="price">R$ 82,42</div>
+                        </div>
+                    </div>
+
+                    <div class="class">
+
+                        <div class="class-btn">
+                            FPS
+                        </div>
+                        <div class="class-btn">
+                            Multiplayer
+                        </div>
+                        <div class="class-btn">
+                            Ação
+                        </div>
+                        <div class="class-btn">
+                            Aventura
+                        </div>
+
+                    </div>
+
+                    <div class="description">
+
+                        <div class="parag">
+                            <h2>Descrição</h2>
+                            <p>Grand Theft Auto V é um jogo eletrônico de ação-aventura desenvolvido pela Rockstar North e publicado pela Rockstar Games. É o sétimo título principal da série Grand Theft Auto e foi lançado originalmente em 17 de setembro de 2013 para PlayStation 3 e Xbox 360, com remasterizações lançadas em 2014 para PlayStation 4 e Xbox One, em 2015 para Microsoft Windows e em 2022 para PlayStation 5 e Xbox Series X/S. O jogo se passa no estado ficcional de San Andreas, com a história da campanha um jogador seguindo três criminosos e seus esforços para realizarem assaltos sob a pressão de uma agência governamental. O mundo aberto permite que os jogadores naveguem livremente pelas áreas rurais e urbanas de San Andreas.</p>
+                            <div class="data">
+                                <div class="info">
+                                    <h2>Lançamento</h2>
+                                    <p>17 de setembro de 2013</p>
+                                </div>
+                                <div class="info">
+                                    <h2>Desenvolvedora</h2>
+                                    <p>Rockstar Games</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        
+        <script src="/js/script.js"></script>
+        <script src="/controls.js"></script>
+
+    </body>
+</html>

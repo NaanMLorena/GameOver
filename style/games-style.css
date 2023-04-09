@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20%;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #12243a;
+    overflow-x: hidden;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+
+/* SCROLLBAR */
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+    }
+    
+    body::-webkit-scrollbar-track {
+    background: black;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+    }
+
+
+/* NAVBAR */
+
+.nav-all {
+    position: fixed; /*Deixa a NavBar acima dos outros itens da página*/
+    display: flex;
+    align-items: center; /*Alinha os itens verticalmente ao centro*/
+    height: 8vh; /*Define a altura da NavBar*/
+    padding-left: 0.5%; /*Deixa um espaço entre a borda da página e os itens*/
+    gap: 5px; /*Define o espaçamento entre os itens*/
+    z-index: 9999;
+}
+
+.nav-item a{
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item img {
+    width: 30px;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+
+.content-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+/* SLIDER */
+
+.slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /*Faz com que os slides que não estão aparecendo no momento sumam*/
+}
+
+.slides {
+    width: 400%; /*Indica que existem 4 slides no total*/
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.slides input { /*Input dos butões*/
+    display: none;
+}
+
+.slide { /*Configuração dos slides como um todo*/
+    width: 25%; /*Diz que apenas 1 dos 4 slides irá aparecer na tela*/
+    transition: 0.4s;
+}
+
+.slide img { /*Configuração das imagens dos slides*/
+    object-fit: cover; /*Evita a distorção da imagem*/
+    width: 100%;
+    height: 80vh;
+}
+
+.slide video { /*Configuração das imagens dos slides*/
+    object-fit: cover; /*Evita a distorção da imagem*/
+    width: 100%;
+    height: 80vh;
+}
+
+.slide-shadow::after {
+    content: ""; /*Indica que o conteúdo da sombra é nulo*/
+    position: absolute; /*Faz com que a sombra se sobreponha à imagem*/
+    width: 100%;
+    height: 80vh;
+    z-index: 8; /*Faz com que a sombra se sobreponha à imagem também*/
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0,
+        rgba(0, 0, 0, 0) 80%,
+        #12243a 100%
+    );
+}
+
+.control { /*Definição geral dos controles*/
+    display: flex;
+    justify-content: right;
+    gap: 2.5%;
+}
+
+/* Definição do controle de mute */
+.control-speak { /*Definição dos controles do vídeo*/
+    display: flex;
+    justify-content: right; /*Deixa os controles à direita*/
+}
+
+#mute-btn {
+    position: absolute; /*Faz com que os controles fiquem acima dos outros objetos*/
+    z-index: 9999; /*Faz com que os outros objetos não interfiram no funcionamento dos controles*/
+    margin: 1%; /*Espaçamento entre a borda e o objeto*/
+    cursor: pointer; /*Faz com que o objeto pareça clicável*/
+    transition: 0.4s;
+}
+
+.mute:hover {
+    transform: scale(1.04);
+}
+
+.speaker-icon {
+    background-image: url(/img/ico/speaker.png); /*Imagem do speaker*/
+    background-repeat: no-repeat; /*Faz com que o plano de fundo não se repita*/
+    background-size: cover; /*Faz com que o ícone pegue todo o espaço disponível*/
+    width: 30px;
+    height: 30px;
+}
+
+.muted-icon {
+    background-image: url(/img/ico/muted.png); /*Imagem de mute*/
+    background-repeat: no-repeat; /*Faz com que o plano de fundo não se repita*/
+    background-size: cover; /*Faz com que o ícone pegue todo o espaço disponível*/
+    width: 30px;
+    height: 30px;
+}
+/* Fim da definição do control de mute */
+
+/* Definição do controle de reprodução */
+.control-play { /*Definição dos controles do vídeo*/
+    display: flex;
+    justify-content: right; /*Deixa os controles à direita*/
+}
+
+#play-btn {
+    position: absolute; /*Faz com que os controles fiquem acima dos outros objetos*/
+    z-index: 9999; /*Faz com que os outros objetos não interfiram no funcionamento dos controles*/
+    margin: 1%; /*Espaçamento entre a borda e o objeto*/
+    cursor: pointer; /*Faz com que o objeto pareça clicável*/
+    transition: 0.4s;
+}
+
+.play-icon {
+    background-image: url(/img/ico/play.png); /*Imagem do botão de play*/
+    background-repeat: no-repeat; /*Faz com que o plano de fundo não se repita*/
+    background-size: cover; /*Faz com que o ícone pegue todo o espaço disponível*/
+    width: 30px;
+    height: 30px;
+}
+
+.paused-icon {
+    background-image: url(/img/ico/pause.png); /*Imagem do botão de pause*/
+    background-repeat: no-repeat; /*Faz com que o plano de fundo não se repita*/
+    background-size: cover; /*Faz com que o ícone pegue todo o espaço disponível*/
+    width: 30px;
+    height: 30px;
+}
+
+
+/* Definição do posicionamento: Define a posição de cada iamgem, movendo os slides dependendo do botão clicado */
+#radio-1:checked ~ .first {
+    margin-left: 0;
+    transition: 0.4s;
+}
+
+#radio-2:checked ~ .first {
+    margin-left: -50%;
+    transition: 0.4s;
+}
+
+#radio-3:checked ~ .first {
+    margin-left: -100%;
+    transition: 0.4s;
+}
+
+#radio-4:checked ~ .first {
+    margin-left: -150%;
+    transition: 0.4s;
+}
+/* Fim da definição do posicionamento */
+
+/* Estilisação dos Radio Buttons */
+.navegation-config { /*Configuração dos butões de navegação*/
+    z-index: 10; /*Sobrepõe os butões em relação aos slides*/
+    padding-block: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-navegation {
+    bottom: 15%; /*Define a posição dos butões na página*/
+    position: absolute;
+    display: flex;
+    justify-content: center; /*Centraliza os butões em suas devidas grades*/
+    padding-inline: 1.5%; /*Ajuda na separação dos butões*/
+    gap: 2%; /*Ajuda na separação dos butões*/
+    z-index: 10;
+}
+
+.manual-btn {
+    cursor: pointer; /*Torna o botão clicável*/
+    transition: 0.4s;
+}
+
+.manual-btn img {
+    object-fit: cover;
+    width: 196px;
+    border-radius: 20px;
+}
+
+.manual-btn:hover {
+    transform: scale(1.05);
+    filter: grayscale(10);
+}
+/* Fim da estilisação dos Radio Buttons */
+
+/* FIM SLIDER */
+
+
+/* CONTEÚDO DE TEXTO */
+
+.content-txt {
+    margin: 3%;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    margin-bottom: 1%; /*Espaçamento entre o título e as classes*/
+    font-size: 40px;
+}
+
+.class {
+    display: flex; /*Deixa os itens na mesma linha*/
+    gap: 1%; /*Define o espaçamento entre as classes*/
+    margin-bottom: 1%; /*Espaçamento entre asclasses e a descrição*/
+}
+
+.class-btn { /*Estilização dos botões das classes*/
+    background-color: #7990a3; /*Cor de fundo do botão*/
+    padding: 0.4%; /*Tamanho do fundo do botão*/
+    border-radius: 20px;
+}
+
+.description {
+    display: flex;
+    flex-direction: row;
+}
+
+.parag { /*Definições do parágrafo da descrição*/
+    background-color: #7990a3; /*Cor de fundo da descrição*/
+    padding: 20px;
+    font-size: 17px;
+    border-radius: 20px;
+    width: 50%; /*Define que o parágrafo ocupará metade do espaço disponível*/
+    text-align: justify;
+}
+
+.parag h2 {
+    margin-bottom: 2px;
+}
+
+.parag p {
+    margin-bottom: 5%;
+}
+
+.data {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-left: auto;
+}
+
+
+
+.shop { /*Definição da tabela de preço*/
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.price {
+    align-self: center;
+    background-color: #7990a3;
+    font-size: 50px;
+    padding-block: 2%;
+    padding-inline: 5%;
+    border-radius: 50px;
+}

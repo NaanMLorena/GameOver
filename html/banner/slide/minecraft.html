@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style/games-style.css">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <nav class="nav-all">
+
+            <div class="nav-item">
+                <a href="/index.html">
+                    <img src="/img/logo/ico/voltar.png" alt="">
+                </a>
+            </div>
+
+            <div class="nav-item">
+                <a href="/index.html">Voltar</a>
+            </div>
+
+        </nav>
+
+        <main>
+
+            <div class="content">
+
+                <div class="content-img">
+
+                    <div class="slider">
+
+                        <div class="slides">
+
+                            <!-- RADIO BUTTONS -->
+                            <input type="radio" name="radio-btn" id="radio-1" checked>
+                            <input type="radio" name="radio-btn" id="radio-2">
+                            <input type="radio" name="radio-btn" id="radio-3">
+                            <input type="radio" name="radio-btn" id="radio-4">
+                            <!-- FIM RADIO BUTTONS -->
+
+                            <!-- SLIDES IMG -->
+                            <div class="slide first">
+                                <div class="control">
+                                    <div class="control-play">
+                                        <div id="play-btn" class="play-icon" onclick="togglePlay()"></div>
+                                    </div>
+                                    <div class="control-speak">
+                                        <div id="mute-btn" class="speaker-icon" onclick="toggleMute()"></div>
+                                    </div>
+                                </div>
+                                <div class="slide-shadow"></div>
+                                <div class="slide-content">
+                                    <video id="myVideo" width="320" height="240" autoplay>
+                                        <source src="/video/minecraft/minecraft-02.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="slide-shadow"></div>
+                                <div class="slide-content">
+                                    <img
+                                        src="/img/games/minecraft/minecraft-castle.jpg"
+                                        alt="">
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="slide-shadow"></div>
+                                <div class="slide-content">
+                                    <img
+                                        src="/img/games/minecraft/minecraft-end.jpg"
+                                        alt="">
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="slide-shadow"></div>
+                                <div class="slide-content">
+                                    <img
+                                        src="/img/games/minecraft/minecraft-jungle.jpg"
+                                        alt="">
+                                </div>
+                            </div>
+                            <!-- FIM SLIDES IMG -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- DECORAÇÃO DOS BUTÕES -->
+                <div class="navegation-config">
+                    <div class="manual-navegation">
+                        <label for="radio-1" class="manual-btn">
+                            <img src="/img/banner/main/minecraft-2.jpg" alt="">
+                        </label>
+                        <label for="radio-2" class="manual-btn">
+                            <img src="/img/games/minecraft/minecraft-castle.jpg"
+                                alt="">
+                        </label>
+                        <label for="radio-3" class="manual-btn">
+                            <img src="/img/games/minecraft/minecraft-end.jpg"
+                                alt="">
+                        </label>
+                        <label for="radio-4" class="manual-btn">
+                            <img src="/img/games/minecraft/minecraft-jungle.jpg"
+                                alt="">
+                        </label>
+                    </div>
+                </div>
+                <!-- FIM DA DECORAÇÃO DOS BUTÕES -->
+
+                <div class="content-txt">
+
+                    <div class="head">
+                        <div class="title">
+                            <h1>Minecraft</h1>
+                        </div>
+
+                        <div class="shop">
+                            <div class="price">R$ 129,99</div>
+                        </div>
+                    </div>
+
+                    <div class="class">
+
+                        <div class="class-btn">
+                            Arcade
+                        </div>
+                        <div class="class-btn">
+                            Multiplayer
+                        </div>
+                        <div class="class-btn">
+                            Survival
+                        </div>
+
+                    </div>
+
+                    <div class="description">
+
+                        <div class="parag">
+                            <h2>Descrição</h2>
+                            <p>Minecraft é um jogo eletrônico sandbox de
+                                sobrevivência criado pelo desenvolvedor sueco
+                                Markus
+                                "Notch" Persson e posteriormente desenvolvido e
+                                publicado pela Mojang Studios, cuja propriedade
+                                intelectual foi obtida pela Microsoft em 2014.
+                                Lançado inicialmente em maio de 2009 como um
+                                projeto
+                                em desenvolvimento, seu lançamento completo
+                                ocorreu
+                                em novembro de 2011 para Microsoft Windows,
+                                macOS ,
+                                Linux e alguns dispositivos móveis, sendo
+                                posteriormente relançado para uma ampla
+                                variedade de
+                                plataformas. É o jogo eletrônico mais vendido de
+                                todos os tempos, vendendo mais de 238 milhões de
+                                cópias em todas as plataformas até abril de
+                                2021,
+                                com mais de 140 milhões de jogadores ativos
+                                mensalmente.</p>
+                            <div class="data">
+                                <div class="info">
+                                    <h2>Lançamento</h2>
+                                    <p>18 de novembro de 2011</p>
+                                </div>
+                                <div class="info">
+                                    <h2>Desenvolvedora</h2>
+                                    <p>Mojang Studios</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        
+        <script src="/js/script.js"></script>
+        <script src="/controls.js"></script>
+
+    </body>
+</html>

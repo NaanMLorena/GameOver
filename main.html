@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .navbar {
+                display: flex;
+  flex-direction: row;
+  justify-content: center; /*Define o posicionamento dos itens dentro da NavBar*/
+  position: fixed; /*Faz com que a NavBar se movimento junto do scroll do mouse*/
+  z-index: 9999;
+  top: 0;
+  width: 180vh; /*Define a largura da NavBar*/
+  height: 100px; /*Define a altura da NavBar*/
+  background-image: linear-gradient(
+    45deg,
+    rgba(18, 36, 58, 1) 0%,
+    rgba(33, 68, 112, 1) 25%,
+    rgba(121, 144, 163, 1) 50%,
+    rgba(153, 153, 153, 1) 100%
+  );
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.nav-config {
+  /* background: linear-gradient(190deg, #7990a3 10%, #12243a 90%); */ 
+  display: flex;
+  align-items: center; /*Alinha verticalmente os itens no centro da navbar*/
+}
+
+.hidde { /*Em tese, é adicionar esconder a navbar adicionando a classe hidden pelo JavaScript*/
+  display: none;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center; /*Alinha os itens dentro de uma mesma tag*/
+  margin-left: 1%;
+  font-size: 60px;
+  font-weight: 400;
+  color: white;
+}
+
+.nav-img {
+  /*Definição da logo da NavBar*/
+  width: 120px;
+}
+
+.nav-all {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /*Define o posicionamento da NavBar na página*/
+}
+
+.navbar.sticky {
+  top: -50px;
+}
+
+.aoba {
+    height: 5000px;
+}
+        </style>
+    </head>
+    <body>
+
+        <div class="nav-all">
+            <nav class="navbar">
+                <div class="nav-config">
+
+                    <div class="nav-item">
+
+                        <img class="nav-img" src="/img/logo/img/AGO-3.0.png" alt="">
+
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+          <div class="aoba"></div>
+          
+
+        <script src="/js/waypoints.js"></script>
+    </body>
+</html>
